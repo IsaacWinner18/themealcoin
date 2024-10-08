@@ -150,3 +150,4 @@ app.get('/api/get-referrals/:userId', async (req, res) => {
   // Return the referrals in the response
   res.json(referrals);
 });
+

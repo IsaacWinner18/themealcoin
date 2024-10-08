@@ -30,7 +30,7 @@ export default function Page() {
   const [referralCode, setReferralCode] = useState('');
   const [message, setMessage] = useState('');
 
-  const copyToClipboardFallback = async (text) => {
+  const copyToClipboardFallback = async (text: string) => {
     const input = document.createElement('input');
     input.value = text;
     document.body.appendChild(input);
@@ -150,8 +150,8 @@ export default function Page() {
         {referralCode && (
         <div className="space-x-4">
           
-          {/* <a href={`http://localhost:3000/referral/${referralCode}`}>
-            http://localhost:3000/referral/{referralCode} </a> */}
+          <a href={`http://localhost:3000/referral/${referralCode}`}>
+          https://themealcoin.vercel.app/referral/{referralCode} </a>
         </div>
 )} {message && <p>{message}</p>}
 </div>
