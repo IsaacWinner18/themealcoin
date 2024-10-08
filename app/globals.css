@@ -33,6 +33,7 @@ header::before {
     transform: translate(-50%, -50%);
     z-index: 0;
     animation: rotate 19s linear infinite;
+    
   }
   
   @keyframes rotate {
@@ -57,6 +58,7 @@ header::before {
     transform: translate(-50%, -50%);
     z-index: 0;
     animation: rotate 19s linear infinite;
+   
   }
   
   @keyframes rotate {

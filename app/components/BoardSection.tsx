@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ['latin'], weight: ['600'], });
 export default function Main() {
   return (
     <>
-    <div className='text-white text-center py-12 bg-[#780478] mt-2 rounded-tl-3xl rounded-tr-3xl space-y-3'>
+    <div className='text-white text-center py-12 bg-[#780478] mt-2 rounded-tl-3xl rounded-tr-3xl space-y-3 overflow-hidden'>
         <div>
             <div className={`font-bold text-xl ${roboto.className}`}>Current Balance</div>
         </div>

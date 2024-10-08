@@ -79,7 +79,7 @@ app.post('/api/generate-referral', async (req, res) => {
   const { userId } = req.body;
 
   // Log the request body to the console for debugging purposes
-  console.log(req.body);
+  // console.log(req.body);
 
   // Find an existing referral for the user
   let existingReferral = await Referral.findOne({ userId });

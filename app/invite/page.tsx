@@ -30,6 +30,15 @@ export default function Page() {
   const [referralCode, setReferralCode] = useState('');
   const [message, setMessage] = useState('');
 
+  const copyToClipboardFallback = async (text) => {
+    const input = document.createElement('input');
+    input.value = text;
+    document.body.appendChild(input);
+    input.select();
+    document.execCommand('copy');
+    document.body.removeChild(input);
+  };
+
   const generateReferral = async () => {
     if (!userId) {
       setMessage('User ID is not set');
@@ -51,8 +60,15 @@ export default function Page() {
     const data = await res.json();
 
     setReferralCode(data.referralCode);
-  };
 
+    // const referralLink = `http://localhost:3000/referral/${referralCode}`;
+
+    // Your existing code for generating referral...
+  const referralLink = `http://localhost:3000/referral/${data.referralCode}`;
+
+  // Fallback copy to clipboard
+  copyToClipboardFallback(referralLink);
+  };
 
 
   return (
@@ -123,16 +139,17 @@ export default function Page() {
 
 
 
-<div className={`flex justifiy-between items-center gap-6 mx-5`}>
-        <div className="bg-white py-1 px-1 rounded-full" onClick={generateReferral}>
+<div className={`mx-3`}>
+  <div className={`flex justifiy-between items-center gap-6`} onClick={generateReferral}>
+        <div className="bg-white py-1 px-1 rounded-full">
             <Image src="/copy-icon.svg" alt="hi" width={40} height={40}  className="p-1"/>
+          </div>
+          <div className={`bg-[#650165] px-20 py-5 rounded-full font-bold text-xl cursor-pointer ${nunito.className}`}>SHARE</div>
           </div>
 
         {referralCode && (
-        <div className="flex items-center justify-center space-x-4">
-        
+        <div className="space-x-4">
           
-          <div className={`bg-[#650165] px-20 py-5 rounded-full font-bold text-xl ${nunito.className}`}>SHARE</div>
           {/* <a href={`http://localhost:3000/referral/${referralCode}`}>
             http://localhost:3000/referral/{referralCode} </a> */}
         </div>

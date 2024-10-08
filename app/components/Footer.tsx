@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <>
 
-<div className=' text-white fixed bottom-0 right-0 left-0'>
+<div className=' text-white fixed bottom-0 right-0 left-0 mb-1'>
   <div className='flex justify-between items-center flex-1 mx-4 '>
 
       <button className="bg-[#800a80] px-8 py-1 rounded-lg">
